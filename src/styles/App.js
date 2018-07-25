@@ -34,6 +34,7 @@ const _styles = StyleSheet.create({
   },
   label: {
     color: '#fff',
+    textAlign: 'center',
   },
   link: {
     color: 'blue',

@@ -45,7 +45,7 @@ class HomeScreen extends Component {
         ) }
         { this.state.tracking && (
           <WatchPosition>
-            <Panel { ...this.props } />
+            <Dashboard { ...this.props } />
           </WatchPosition>
         ) }
       </View>
@@ -56,11 +56,19 @@ class HomeScreen extends Component {
 
 export default HomeScreen;
 
-const Panel = (props) => {
-  return (
+const Dashboard = (props) => {
+
+  if (props.error) {
+    return <View><Text>{ props.error.message }</Text></View>;
+  }
+
+  return props.position && (
     <View>
-      <Text>Latitude: { props.latitude }</Text>
-      <Text>Longitude: { props.longitude }</Text>
+      <Text>Latitude: { props.position.coords.latitude }</Text>
+      <Text>Longitude: { props.position.coords.longitude }</Text>
+      <Text>Speed: { props.position.coords.speed }m/s</Text>
+      <Text>Altitude: { props.position.coords.altitude }m</Text>
+      <Text>Accuracy: { props.position.coords.accuracy }%</Text>
     </View>
   );
 };

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 
-class WatchPosition extends Component {
-
+class CurrentPosition extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +11,7 @@ class WatchPosition extends Component {
   }
 
   componentDidMount() {
-    this.watchId = navigator.geolocation.watchPosition(
+    navigator.geolocation.getCurrentPosition(
       (position) => this.setState({ position, error: null }),
       (error) => this.setState({ error }),
       {
@@ -22,10 +21,6 @@ class WatchPosition extends Component {
         distanceFilter: 10
       }
     );
-  }
-
-  componentWillUnmount() {
-    navigator.geolocation.clearWatch(this.watchId);
   }
 
   render() {
@@ -43,4 +38,4 @@ class WatchPosition extends Component {
   }
 }
 
-export default WatchPosition;
+export default CurrentPosition;

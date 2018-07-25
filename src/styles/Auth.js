@@ -13,11 +13,16 @@ const _styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
   },
+  subHeader: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   footer: {
     flex: 1,
+    justifyContent: 'center',
   },
   box: {
-    flex: 3,
+    flex: 4,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',

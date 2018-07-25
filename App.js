@@ -5,11 +5,14 @@ import { createStackNavigator } from 'react-navigation';
 import LoginScreen from './src/components/auth/Login.js';
 import RegisterScreen from './src/components/auth/Register.js';
 import HomeScreen from './src/components/home/Home.js';
+import AuthFAQScreen from './src/components/faq/Auth.js';
 
 const RootStack = createStackNavigator(
   {
     Login: LoginScreen,
     Register: RegisterScreen,
+    AuthFAQ: AuthFAQScreen,
+
     Home: HomeScreen,
   },
   {

@@ -19,20 +19,20 @@ class HomeScreen extends Component {
     this.state = {
       tracking: false,
     };
-    this.updateTracking = this.updateTracking.bind(this);
+    this._updateTracking = this._updateTracking.bind(this);
   }
 
-  updateTracking() {
+  _updateTracking() {
     this.setState((previousState) => {
       return { tracking: !previousState.tracking }
     });
-  }  
+  }
 
   render() {
     return (
       <View style={ AppStyles.container }>
         <View>
-          <Button style={ AppStyles.button } onPress={ this.updateTracking }>
+          <Button style={ AppStyles.button } onPress={ this._updateTracking }>
             { !this.state.tracking ? 'Start' : 'Stop' }
           </Button>
         </View>
